@@ -30,6 +30,14 @@ export type SignupFormBody = {
 
 }
 
+export type PaymentDraftBody = {
+    email: string;
+    name: string
+    phoneNumber: string;
+    paymentType: string;
+    amount:number;
+}
+
 export type OtpDataType = {
     phone: string;
     otp: string;
