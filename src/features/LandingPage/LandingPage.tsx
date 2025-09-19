@@ -78,7 +78,7 @@ const LandingPage = () => {
                     <Form.Item
                         label="Email Address"
                         name="email"
-                        rules={[{required: true}]}
+                        // rules={[{required: true}]}
                     >
                         <Input
                             prefix={<IoMail className="text-orange-400"/>}
@@ -100,7 +100,7 @@ const LandingPage = () => {
                             className="w-full"
                         />
                     </Form.Item>
-                    <Form.Item label="Payment Method" name={"paymentType"}>
+                    <Form.Item label="Payment Method" name={"paymentType"}   rules={[{required: true}]}>
                         <Radio.Group block options={options} defaultValue="card"
                                      optionType="button"
                                      buttonStyle="solid"/>
@@ -108,7 +108,7 @@ const LandingPage = () => {
                     <Form.Item
                         label="Purpose"
                         name="purpose"
-                        rules={[{required: true}]}
+                        // rules={[{required: true}]}
                     >
                         <Input.TextArea
                             placeholder="Please explain the purpose of this transaction"
