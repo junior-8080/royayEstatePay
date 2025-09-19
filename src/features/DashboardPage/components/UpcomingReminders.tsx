@@ -1,13 +1,20 @@
+import {StatusType} from "@/lib/type";
 
 
 const upcomingReminders = [
-    { name: 'Sarah Johnson', amount: '1000', time: '2:00 PM', status: 'Success' },
-    { name: 'Robert Wilson', amount: '100', time: '3:30 PM', status: 'Failed' },
-    { name: 'Lisa Anderson', amount: '20', time: '6:00 PM', status: 'Success' },
-    { name: 'Sarah Johnson', amount: '30', time: '2:00 PM', status: 'Pending' },
-    { name: 'Robert Wilson', amount: '40', time: '3:30 PM', status: 'Success' },
-    { name: 'Lisa Anderson', amount: '50', time: '6:00 PM', status: 'Success' }
+    { name: 'Sarah Johnson', amount: '1000', time: '2:00 PM', status: 'success' },
+    { name: 'Robert Wilson', amount: '100', time: '3:30 PM', status: 'failed' },
+    { name: 'Lisa Anderson', amount: '20', time: '6:00 PM', status: 'success' },
+    { name: 'Sarah Johnson', amount: '30', time: '2:00 PM', status: 'pending' },
+    { name: 'Robert Wilson', amount: '40', time: '3:30 PM', status: 'success' },
+    { name: 'Lisa Anderson', amount: '50', time: '6:00 PM', status: 'success' }
 ];
+
+const statusClass = {
+    success: 'text-green-600  text-center bg-green-100',
+    failed: 'text-red-600  text-center bg-red-100',
+    pending: 'text-yellow-600 text-center  bg-yellow-100'
+}
 
 
 const UpcomingReminders = () => (
@@ -21,7 +28,7 @@ const UpcomingReminders = () => (
                         <p className="text-sm text-gray-600">GH₵{reminder.amount}</p>
                     </div>
                     <div className="text-right">
-                        <p className="font-medium text-blue-600">{reminder.status}</p>
+                        <p className={`${statusClass[reminder.status as StatusType]}`}>{reminder.status}</p>
                         <p className="text-xs text-gray-500">{reminder.time}</p>
                     </div>
                 </div>

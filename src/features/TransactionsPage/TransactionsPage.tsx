@@ -1,9 +1,17 @@
 'use client'
 import React from "react";
 import {Input, Select, Table} from "antd";
+import {StatusType} from "@/lib/type";
+
 
 
 const TransactionsPage = () => {
+
+    const statusClass = {
+        success: 'text-green-600  text-center bg-green-100',
+        failed: 'text-red-600  text-center bg-red-100',
+        pending: 'text-yellow-600 text-center  bg-yellow-100'
+    }
     const columns = [
         {
             title: 'Name',
@@ -29,6 +37,7 @@ const TransactionsPage = () => {
             title: 'Status',
             dataIndex: 'status',
             key: 'status',
+            render:(status:StatusType) => <p className={`${statusClass[status]}`}>{status}</p>
         },
         {
             title: 'reason',
@@ -48,7 +57,7 @@ const TransactionsPage = () => {
             email: "john.doe@example.com",
             phoneNumber: "+233501234567",
             amount: 250.0,
-            status: "Paid",
+            status: "success",
             reason: "Monthly estate fee",
             createdAt: "2025-09-18T14:32:00Z"
         },
@@ -58,7 +67,7 @@ const TransactionsPage = () => {
             email: "jane.smith@example.com",
             phoneNumber: "+233209876543",
             amount: 120.5,
-            status: "Pending",
+            status: "pending",
             reason: "Maintenance request",
             createdAt: "2025-09-17T09:15:00Z"
         },
@@ -68,7 +77,7 @@ const TransactionsPage = () => {
             email: "kwame.mensah@example.com",
             phoneNumber: "+233241112233",
             amount: 500.0,
-            status: "Failed",
+            status: "failed",
             reason: "Land documentation fee",
             createdAt: "2025-09-15T19:45:00Z"
         }

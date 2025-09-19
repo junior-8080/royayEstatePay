@@ -83,6 +83,8 @@ export type NavItemType = {
 }
 export type AuthView = "signup" | "login" | "request-password-reset" | "reset-password" |"verify"
 
+
+export type StatusType  = 'success'| 'failed' | 'pending'
 export type AuthTileType = {
     title: string;
     subtitle: string
