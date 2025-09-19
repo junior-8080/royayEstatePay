@@ -100,7 +100,7 @@ const LandingPage = () => {
                             className="w-full"
                         />
                     </Form.Item>
-                    <Form.Item>
+                    <Form.Item label="Payment Method" name={"paymentType"}>
                         <Radio.Group block options={options} defaultValue="card"
                                      optionType="button"
                                      buttonStyle="solid"/>
