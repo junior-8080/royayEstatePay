@@ -8,7 +8,7 @@ const config: Config = {
         outfit:["Outfit","sans-serif"]
       },
       colors: {
-        primary:"#004056",
+        primary:"#053AA0",
         borders:"#E9EAEA",
         link:"#109CF1",
         "ctx-dark":"#F2952F",

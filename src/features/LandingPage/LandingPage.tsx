@@ -14,7 +14,7 @@ import PaymentVerification from "@/features/LandingPage/components/PaymentVerifi
 const LandingPage = () => {
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState('');
-    const [view,setView] = useState<'payment'| 'verify' | 'otp' >('verify');
+    const [view,setView] = useState<'payment'| 'verify' | 'otp' >('payment');
     const [paymentDataDraft,setPaymentDraft] = useState<PaymentDraftBody>();
 
     const options = [
@@ -122,7 +122,7 @@ const LandingPage = () => {
                     <Form.Item className="my-8">
                         <Button
                             type="primary"
-                            className="bg-blue-600 font-semibold cursor-pointer"
+                            className="bg-primary font-semibold cursor-pointer"
                             htmlType="submit"
                             loading={loading}
                             block
@@ -137,7 +137,7 @@ const LandingPage = () => {
                     <p className="text-xl text-orange-500">Let’s Verify Your Number</p>
                     <p className="text-sm">A verification code has been set to your number: {paymentDataDraft?.phoneNumber}</p>
                     <Input.OTP length={6} size="large"/>
-                    <Button type="primary" size="large" className="bg-blue-600 font-semibold cursor-pointer w-[50%]" onClick={() => setView('verify')}>Proceed</Button>
+                    <Button type="primary" size="large" className="bg-primary font-semibold cursor-pointer w-[50%]" onClick={() => setView('verify')}>Proceed</Button>
                     <p className="text-blue-800 px-10"   onClick={() => setView('payment')}>Back</p>
                 </div>}
                 {view === 'verify' && <PaymentVerification handleView={() => setView('payment')} status={ 'success'}/>}
