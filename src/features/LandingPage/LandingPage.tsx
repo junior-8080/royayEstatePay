@@ -9,6 +9,7 @@ import { TbDeviceMobileDollar } from "react-icons/tb";
 import { FaCreditCard } from "react-icons/fa6";
 import {PaymentDraftBody} from "@/lib/type";
 import PaymentVerification from "@/features/LandingPage/components/PaymentVerification";
+import Link from "next/link";
 
 
 const LandingPage = () => {
@@ -46,6 +47,7 @@ const LandingPage = () => {
                     <img src={"/logo.png"} alt={"logo"} className="w-[80px] md:w-[120px] mx-auto"/>
                 </div>
                 {view === 'payment' &&<Form
+                    initialValues={{paymentType:"card"}}
                     name="contact-form"
                     layout="vertical"
                     onFinish={onFinish}
@@ -141,6 +143,7 @@ const LandingPage = () => {
                     <p className="text-blue-800 px-10"   onClick={() => setView('payment')}>Back</p>
                 </div>}
                 {view === 'verify' && <PaymentVerification handleView={() => setView('payment')} status={ 'success'}/>}
+                {view === 'payment' && <Link className="text-center text-primary underline" href={"/auth"}>Admin Portal</Link>}
             </div>
         </div>
     );

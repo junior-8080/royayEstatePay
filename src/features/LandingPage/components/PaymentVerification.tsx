@@ -18,7 +18,7 @@ const PaymentVerification = ({status,handleView}:Props) => {
         {status === 'failed' && <p>Payment Failed</p>}
         {status === 'success' && <IoCheckmarkDoneCircle  className="text-green-600 text-2xl"/>}
         {status === 'failed' && <MdCancel className="text-red-600 text-2xl" />}
-        <Button type="primary" size="large" className="bg-blue-600 font-semibold cursor-pointer w-[40%]" onClick={handleView}>New Payment</Button>
+        <Button type="primary" size="large" className="bg-primary font-semibold cursor-pointer w-[40%] my-4" onClick={handleView}>New Payment</Button>
     </div>
 }
 
