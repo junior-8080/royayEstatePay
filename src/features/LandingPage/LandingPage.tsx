@@ -39,10 +39,10 @@ const LandingPage = () => {
 
     return (
         <div
-            className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-300 p-10 px-4 flex items-center justify-center">
-            <div className="w-full max-w-lg rounded-2xl shadow-2xl border-none p-6">
-                <div className="text-center my-4">
-                    <img src={"/logo.png"} alt={"logo"} className="w-[100px] mx-auto"/>
+            className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-300 p-8 px-4 flex items-center justify-center">
+            <div className="w-full max-w-lg rounded-2xl shadow-2xl border-none px-6 py-3">
+                <div className="text-center my-1">
+                    <img src={"/logo.png"} alt={"logo"} className="w-[80px] mx-auto"/>
                 </div>
                 <Form
                     name="contact-form"
@@ -106,13 +106,13 @@ const LandingPage = () => {
                                      buttonStyle="solid"/>
                     </Form.Item>
                     <Form.Item
-                        label="Reason"
-                        name="reason"
+                        label="Purpose"
+                        name="purpose"
                         rules={[{required: true}]}
                     >
                         <Input.TextArea
-                            placeholder="Please explain the reason for your request"
-                            name="reason"
+                            placeholder="Please explain the purpose of this transaction"
+                            name="purpose"
                             rows={5}
                         />
                     </Form.Item>
